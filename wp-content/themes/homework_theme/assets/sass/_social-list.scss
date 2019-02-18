@@ -1,0 +1,9 @@
+.social-list{
+  &__wrapper {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  &__item {}
+  &__link {}
+}
