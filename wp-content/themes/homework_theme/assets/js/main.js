@@ -54,3 +54,11 @@ $(document).ready(function(){
         nextArrow : '.main-page__slider__next-btn'
 });
 });
+$(document).ready(function () {
+   $('.big-image__slider__info__compress-btn').on('click', function () {
+       $('.big-image__slider__info__wrapper').toggleClass("big-image__slider__info__wrapper__pressed");
+       $('.big-image__slider__info__compress-btn').toggleClass("fa-compress fa-expand");
+       $('.big-image__slider__info__content__wrapper').toggleClass("big-image__slider__info__content__wrapper__hidden");
+       $('.big-image__slider__info__answer__wrapper').toggleClass("big-image__slider__info__answer__wrapper__hide");
+   })
+});
