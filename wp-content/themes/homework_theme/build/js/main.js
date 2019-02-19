@@ -46,4 +46,11 @@ var adjustMenu = function() {
             $(this).toggleClass('hover');
         });
     }
-}
+};
+$(document).ready(function(){
+    $('.main-page__image__wrapper').slick({
+        adaptiveHeight : true,
+        prevArrow : '.main-page__slider__prev-btn',
+        nextArrow : '.main-page__slider__next-btn'
+});
+});

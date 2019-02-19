@@ -28,10 +28,16 @@ a {text-decoration: none;}
 .nav {
   display: inline-block;
   list-style: none;
+  margin-top: 30px;
   *zoom: 1;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+}
+.nav__wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .nav > li {
   border-bottom: 1px solid transparent;
@@ -49,7 +55,7 @@ a {text-decoration: none;}
 }
 .nav ul {
   list-style: none;
-  width: 9em;
+  min-width: 11em;
 }
 .nav a {
   padding: 10px 15px;
@@ -87,7 +93,10 @@ a {text-decoration: none;}
   z-index:100;
 }
 .nav li li a{
-  padding-left: 20px;
+  padding-left: 25px;
+}
+.nav li li li a{
+  padding-left: 40px;
 }
 .nav li li a:hover {
   position: relative;
@@ -111,6 +120,13 @@ a {text-decoration: none;}
     display: flex;
     align-items: center;
     flex-direction: row;
+  }
+  .nav {
+    margin-top: 0;
+  }
+  .nav__wrapper {
+    flex-direction: row;
+    align-items: center;
   }
 }
 @media screen and (max-width: 768px) {

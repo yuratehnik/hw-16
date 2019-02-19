@@ -1,9 +1,25 @@
 .social-list{
   &__wrapper {
+    margin: 40px auto 10px;
     list-style: none;
     display: flex;
     flex-flow: row wrap;
   }
-  &__item {}
-  &__link {}
+  &__item {
+  }
+  &__link {
+    display: block;
+    padding: 7px;
+    color: #362f2f;
+    text-decoration: none;
+    transition: 0.3s;
+    &:hover {
+      color: #887878;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .social-list__wrapper {
+    margin: 0;
+  }
 }
