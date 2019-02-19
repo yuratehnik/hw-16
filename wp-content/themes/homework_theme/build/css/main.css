@@ -581,6 +581,7 @@ a {
       color: #c3a000; }
 
 .main-page__bottom__third-container {
+  padding-top: 20px;
   width: 100%;
   max-width: 315px; }
   .main-page__bottom__third-container__social {
@@ -591,6 +592,8 @@ a {
     -webkit-box-direction: normal;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap; }
+  .main-page__bottom__third-container__social-list {
+    margin-top: 30px; }
   .main-page__bottom__third-container__image-wrapper {
     margin-right: 25px;
     width: 100%;
@@ -624,3 +627,20 @@ a {
       .main-page__bottom__third-container__twitter__wrapper p a {
         text-decoration: none;
         color: #000000; }
+
+.partners__wrapper {
+  margin-bottom: 30px;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
