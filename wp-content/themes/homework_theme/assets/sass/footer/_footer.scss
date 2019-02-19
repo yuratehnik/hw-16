@@ -1,0 +1,17 @@
+.footer {
+  &__toheader__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    background-color: #362f2f;
+    margin-left: auto;
+    color: #fff;
+  }
+  &__credits {
+    margin-top: 70px;
+    text-align: center;
+  }
+}

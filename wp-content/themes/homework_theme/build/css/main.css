@@ -470,11 +470,11 @@ a {
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   margin: 60px auto 100px;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
 
 .main-page__bottom__first-container {
+  margin: 0 5px;
   width: 100%;
   max-width: 359px;
   padding-bottom: 20px;
@@ -522,6 +522,7 @@ a {
 
 .main-page__bottom__second-container {
   width: 100%;
+  margin: 0 5px;
   max-width: 360px; }
   .main-page__bottom__second-container__headline {
     max-width: 165px;
@@ -539,10 +540,11 @@ a {
     -webkit-box-direction: normal;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin: 25px 0; }
+    margin: 25px 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center; }
   .main-page__bottom__second-container__item__image__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -581,6 +583,7 @@ a {
       color: #c3a000; }
 
 .main-page__bottom__third-container {
+  margin: 0 5px;
   padding-top: 20px;
   width: 100%;
   max-width: 315px; }
@@ -628,6 +631,19 @@ a {
         text-decoration: none;
         color: #000000; }
 
+@media only screen and (min-width: 768px) {
+  .main-page__bottom__second-container__item__wrapper {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    text-align: left; } }
+
+@media only screen and (min-width: 1060px) {
+  .main-page__bottom__wrapper {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; } }
+
 .partners__wrapper {
   margin-bottom: 30px;
   list-style: none;
@@ -644,3 +660,27 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+  .partners__wrapper > li {
+    margin: 10px auto;
+    padding: 0 20px; }
+
+.footer__toheader__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 22px;
+  width: 50px;
+  height: 50px;
+  background-color: #362f2f;
+  margin-left: auto;
+  color: #fff; }
+
+.footer__credits {
+  margin-top: 70px;
+  text-align: center; }
