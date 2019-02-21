@@ -4,46 +4,19 @@ var sass        = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
-	return gulp.src('assets/sass/**/*.scss')
+	return gulp.src('sass/**/*.scss')
 		.pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-		.pipe(gulp.dest('build/css'))
+		.pipe(gulp.dest('css'))
 		.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('img', function () {
-	return gulp.src('assets/img/**/*')
-		.pipe(gulp.dest('build/img'))
-		.pipe(browserSync.reload({stream: true}))
-
-});
-
-gulp.task("html", function () {
-	return gulp.src("assets/**/*.html")
-		.pipe(gulp.dest("build"))
-		.pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task('fonts', function () {
-    return gulp.src('assets/fonts/**/*')
-        .pipe(gulp.dest('build/fonts'))
-        .pipe(browserSync.reload({stream: true}))
-
-});
-
-gulp.task('js', function () {
-    return gulp.src('assets/js/**/*')
-        .pipe(gulp.dest('build/js'))
-        .pipe(browserSync.reload({stream: true}))
-
-});
-
-gulp.task("watch", [ 'sass', "html", 'img', 'fonts', 'js'], function () {
+gulp.task("watch", ['sass'], function () {
 	browserSync.init({
-		server: "./build",
+		server: ".",
 		notify: false,
 		ui: {
 			port: 3000
