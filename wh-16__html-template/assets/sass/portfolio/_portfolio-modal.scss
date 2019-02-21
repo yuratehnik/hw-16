@@ -1,0 +1,50 @@
+.modalBox {
+  position: fixed; /* create the modal window layer, and have it fill the entire screen */
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8); /* set the modal window layer's background color to a translucent black */
+  z-index: 99999; /* put the layer on top of every other layer */
+  opacity:0; /* make the layer invisible intially */
+  pointer-events: none;
+}
+.modalBox:target {
+  opacity:1; /* make the modal window layer visible */
+  pointer-events: auto;
+}
+.modalBox > div {
+  width: 100%;
+  max-width: 680px; /* set the window's width */
+  position: relative;
+  margin: 20px auto; /* center the window horizontally */
+  background: #fff;
+}
+.modal__wrapper {
+  position: relative;
+}
+.closeWindow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #c29f00;
+  font-weight: bold;
+  width: 35px;
+  height: 35px;
+  z-index: 2;
+}
+@media only screen and (min-width: 500px) {
+  .closeWindow {
+    width: 66px;
+    height: 60px;
+  }
+}
+@media only screen and (min-height: 750px) {
+  .modalBox > div {
+    max-width: 800px;
+  }
+}

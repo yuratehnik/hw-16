@@ -1,0 +1,14 @@
+.wide-container {
+  margin: auto;
+  padding: 0 5px;
+  max-width: 1140px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.thin-container {
+  margin: auto;
+  padding: 0 5px;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+}
