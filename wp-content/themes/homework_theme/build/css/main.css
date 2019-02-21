@@ -1014,7 +1014,8 @@ a {
   font-weight: 700; }
 
 .post__comments-section__comments__wrapper {
-  list-style: none; }
+  list-style: none;
+  margin-bottom: 60px; }
 
 .post__comments-section__comments__item {
   margin-top: 20px; }
@@ -1139,3 +1140,17 @@ a {
     .post__comments-section__comments__form__textarea__wrapper label {
       width: 100%;
       max-width: 475px; }
+
+.post__comments-section__comments__underform__paragraph {
+  margin: 30px auto 120px;
+  color: #333333;
+  font-size: 12px;
+  font-weight: 400; }
+
+.post__bottom-section__wrapper {
+  margin-bottom: 100px; }
+
+.post__bottom__third-container__list {
+  margin: 30px 0 0 30px; }
+  .post__bottom__third-container__list a {
+    color: #353535; }

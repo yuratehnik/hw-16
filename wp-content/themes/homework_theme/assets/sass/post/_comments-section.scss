@@ -11,6 +11,7 @@
   &__comments {
     &__wrapper {
       list-style: none;
+      margin-bottom: 60px;
     }
     &__item {
       margin-top: 20px;
@@ -126,5 +127,21 @@
         }
       }
     }
+    &__underform__paragraph {
+      margin: 30px auto 120px;
+      color: #333333;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+}
+.post__bottom-section__wrapper {
+  margin-bottom: 100px;
+}
+.post__bottom__third-container__list {
+  margin: 30px 0 0 30px;
+  & a {
+    color: #353535;
+    line-height: 21px;
   }
 }
