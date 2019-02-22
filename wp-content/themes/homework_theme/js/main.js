@@ -14,7 +14,7 @@ $(document).ready(function() {
         $(".header__logo__wrapper").toggleClass("header__logo__wrapper__with-menu")
     });
     adjustMenu();
-})
+});
 
 $(window).bind('resize orientationchange', function() {
     ww = document.body.clientWidth;

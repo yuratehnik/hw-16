@@ -84,7 +84,7 @@
         flex-flow: row wrap;
         justify-content: space-between;
         list-style: none;
-        & li {
+        & p {
           width: 100%;
           max-width: 340px;
         }
@@ -106,6 +106,9 @@
           background-color: #c6c6c6;
           color: #333333;
         }
+        &__wrapper {
+          order: 2;
+        }
       }
       &__text {
         margin-top: 20px;
@@ -117,8 +120,9 @@
         resize: none;
         min-height: 190px;
         &__wrapper {
+          order: 1;
           display: flex;
-          max-width: 100% !important;
+          max-width: 100%;
           flex-flow: row wrap;
           & label {
             width: 100%;
@@ -144,4 +148,8 @@
     color: #353535;
     line-height: 21px;
   }
+}
+.form-submit {
+  order: 2;
+  display: flex;
 }

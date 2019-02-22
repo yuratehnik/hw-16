@@ -22,9 +22,9 @@ gulp.task("watch", ['sass'], function () {
 			port: 3000
 		}
     });
-    gulp.watch('assets/sass/**/*.scss', ["sass"]);
-    gulp.watch('assets/**/*.html' , ['html']);
-	gulp.watch('assets/img/**/*', ["img"]);
-    gulp.watch('assets/fonts/**/*', ["fonts"]);
-    gulp.watch('assets/js/**/*', ["js"]);
+    gulp.watch('sass/**/*.scss', ["sass"]);
+    gulp.watch('**/*.html' , ['html']);
+	gulp.watch('img/**/*', ["img"]);
+    gulp.watch('fonts/**/*', ["fonts"]);
+    gulp.watch('js/**/*', ["js"]);
 });

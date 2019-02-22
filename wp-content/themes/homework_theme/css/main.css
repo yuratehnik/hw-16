@@ -1097,7 +1097,7 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between;
   list-style: none; }
-  .post__comments-section__comments__form__wrapper li {
+  .post__comments-section__comments__form__wrapper p {
     width: 100%;
     max-width: 340px; }
 
@@ -1118,6 +1118,10 @@ a {
   .post__comments-section__comments__form__submit:hover {
     background-color: #c6c6c6;
     color: #333333; }
+  .post__comments-section__comments__form__submit__wrapper {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2; }
 
 .post__comments-section__comments__form__text {
   margin-top: 20px;
@@ -1129,10 +1133,13 @@ a {
   resize: none;
   min-height: 190px; }
   .post__comments-section__comments__form__textarea__wrapper {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 100% !important;
+    max-width: 100%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-flow: row wrap;
@@ -1155,3 +1162,11 @@ a {
   .post__bottom__third-container__list a {
     color: #353535;
     line-height: 21px; }
+
+.form-submit {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
