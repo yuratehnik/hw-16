@@ -5,7 +5,9 @@ get_header();
 <main>
     <section class="thin-container post__top-section__wrapper">
         <div class="post__top-section__image-wrapper">
-          <img src="<?php echo get_the_post_thumbnail_url();?>" alt="main photo">
+            <? if(has_post_thumbnail()) :?>
+                <img src="<? echo get_the_post_thumbnail_url();?>" alt="photo">
+            <? endif;?>
         </div>
         <article class="post__top-section__article__wrapper">
             <h1 class="post__top-section__article__headline">
@@ -101,108 +103,110 @@ RSVP
             <h2 class="main-page__bottom__second-container__headline">
 news
             </h2>
-            <div class="main-page__bottom__second-container__item__wrapper">
-                <div class="main-page__bottom__second-container__item__image__wrapper">
-                    <img src="img/post/Photoukie2992019.png" alt="image">
-                </div>
-                <div class="main-page__bottom__second-container__item__text__wrapper">
-                    <h3 class="main-page__bottom__second-container__item__text__headline">
-New Gallery Set
-</h3>
-                    <span class="main-page__bottom__second-container__item__text__date">
-09.12.2014
-</span>
-                    <p class="main-page__bottom__second-container__item__text__paragraph">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                        fringilla mi orci, ac venenatis ante venenatis eget.
-                        <span class="main-page__bottom__second-container__item__text__button__wrapper">
-                            <a href="">Read More</a>
+            <?php
+            $args = array( 'post_type' => 'news', 'posts_per_page' => 3 );
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();?>
+                <div class="main-page__bottom__second-container__item__wrapper">
+                    <div class="main-page__bottom__second-container__item__image__wrapper">
+                        <img src="<? the_post_thumbnail_url();?>" alt="image">
+                    </div>
+                    <div class="main-page__bottom__second-container__item__text__wrapper">
+                        <h3 class="main-page__bottom__second-container__item__text__headline">
+                            <? echo the_title();?>
+                        </h3>
+                        <span class="main-page__bottom__second-container__item__text__date">
+                            <? echo the_date();?>
                         </span>
-                    </p>
+                        <p class="main-page__bottom__second-container__item__text__paragraph">
+                            <? echo get_the_excerpt();?>
+                            <span class="main-page__bottom__second-container__item__text__button__wrapper">
+                                <a href="<? echo get_permalink();?>">
+                                    Read More
+                                </a>
+                            </span>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="main-page__bottom__second-container__item__wrapper">
-                <div class="main-page__bottom__second-container__item__image__wrapper">
-                    <img src="img/post/Photoukie2992019.png" alt="image">
-                </div>
-                <div class="main-page__bottom__second-container__item__text__wrapper">
-                    <h3 class="main-page__bottom__second-container__item__text__headline">
-New Gallery Set
-</h3>
-                    <span class="main-page__bottom__second-container__item__text__date">
-09.12.2014
-</span>
-                    <p class="main-page__bottom__second-container__item__text__paragraph">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                        fringilla mi orci, ac venenatis ante venenatis eget.
-                        <span class="main-page__bottom__second-container__item__text__button__wrapper">
-                            <a href="">Read More</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="main-page__bottom__second-container__item__wrapper">
-                <div class="main-page__bottom__second-container__item__image__wrapper">
-                    <img src="img/post/Photoukie2992019.png" alt="image">
-                </div>
-                <div class="main-page__bottom__second-container__item__text__wrapper">
-                    <h3 class="main-page__bottom__second-container__item__text__headline">
-New Gallery Set
-</h3>
-                    <span class="main-page__bottom__second-container__item__text__date">
-09.12.2014
-</span>
-                    <p class="main-page__bottom__second-container__item__text__paragraph">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                        fringilla mi orci, ac venenatis ante venenatis eget.
-                        <span class="main-page__bottom__second-container__item__text__button__wrapper">
-                            <a href="">Read More</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
+            <? endwhile;
+            ?>
         </div>
         <div class="main-page__bottom__second-container post__bottom__third-container">
             <h2 class="main-page__bottom__second-container__headline">
 category
             </h2>
             <ul class="post__bottom__third-container__list">
-                <li>
-                    <a href="#">
-    Fashion
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-    Collections
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-    World
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-    Photography
-                    </a>
-                </li>
+                <?
+                $category_list_args = Array (
+                    'title_li'           => __( '' ),
+                );
+                wp_list_categories( $category_list_args );?>
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--    Fashion-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--    Collections-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--    World-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--    Photography-->
+<!--                    </a>-->
+<!--                </li>-->
             </ul>
         </div>
     </section>
     <ul class="wide-container partners__wrapper">
-        <li>
-            <img src="img/mainpage/phaseone_logo.png" alt="phaseone">
-        </li>
-        <li>
-            <img src="img/mainpage/manfrotto_logo.png" alt="manfrotto">
-        </li>
-        <li>
-            <img src="img/mainpage/hasselblad.png" alt="hasselblad">
-        </li>
-        <li>
-            <img src="img/mainpage/broncolor_logo.png" alt="broncolor">
-        </li>
+        <?php
+        $args = array( 'post_type' => 'partners' );
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post();?>
+            <li>
+                <img src="<? the_post_thumbnail_url()?>" alt="">
+            </li>
+<!--            <div class="main-page__bottom__second-container__item__wrapper">-->
+<!--                <div class="main-page__bottom__second-container__item__image__wrapper">-->
+<!--                    <img src="--><?// the_post_thumbnail_url();?><!--" alt="image">-->
+<!--                </div>-->
+<!--                <div class="main-page__bottom__second-container__item__text__wrapper">-->
+<!--                    <h3 class="main-page__bottom__second-container__item__text__headline">-->
+<!--                        --><?// echo the_title();?>
+<!--                    </h3>-->
+<!--                    <span class="main-page__bottom__second-container__item__text__date">-->
+<!--                            --><?// echo the_date();?>
+<!--                        </span>-->
+<!--                    <p class="main-page__bottom__second-container__item__text__paragraph">-->
+<!--                        --><?// echo get_the_excerpt();?>
+<!--                        <span class="main-page__bottom__second-container__item__text__button__wrapper">-->
+<!--                                <a href="--><?// echo get_permalink();?><!--">-->
+<!--                                    Read More-->
+<!--                                </a>-->
+<!--                            </span>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+        <? endwhile;
+        ?>
+<!--        <li>-->
+<!--            <img src="img/mainpage/phaseone_logo.png" alt="phaseone">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <img src="img/mainpage/manfrotto_logo.png" alt="manfrotto">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <img src="img/mainpage/hasselblad.png" alt="hasselblad">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <img src="img/mainpage/broncolor_logo.png" alt="broncolor">-->
+<!--        </li>-->
     </ul>
 </main>
 

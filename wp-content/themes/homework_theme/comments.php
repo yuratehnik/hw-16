@@ -1,7 +1,67 @@
 <?php
 if (comments_open()) {
     if (get_comments_number() == 0) { ?>
+        <section class="thin-container post__comments-section__wrapper">
         <h3>Комментариев пока нет, но вы можете стать первым</h3>
+            <?php
+            $fields =  array(
+
+                'author' =>
+                    '<p><label for="name">
+                         <input type="text" id="name" name="author" placeholder="Name" class="post__comments-section__comments__form__text" value="' . esc_attr( $commenter['comment_author'] ) .
+                    '">
+                    </label></p>',
+
+                'email' =>
+                    '<p><label for="email">
+                         <input type="text" id="email" name="email" placeholder="E-Mail" class="post__comments-section__comments__form__text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+                    '">
+                     </label></p>',
+
+                'url' =>
+                    '<p><label for="site">
+                            <input type="text" id="site" name="site" placeholder="Web Site" class="post__comments-section__comments__form__text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+                    '">
+                        </label></p>',
+                'job' => '<p><label for="job">
+                            <input type="text" id="job" name="job" placeholder="Job" class="post__comments-section__comments__form__text">
+                        </label></p>',
+            );
+            $args = array(
+                'id_form'           => 'commentform',
+                'class_form'      => 'post__comments-section__comments__form__wrapper',
+                'id_submit'         => 'submit',
+                'class_submit'      => 'post__comments-section__comments__form__submit',
+                'name_submit'       => 'submit',
+                'title_reply'       => __( 'Leave a Reply' ),
+                'title_reply_to'    => __( 'Leave a Reply to %s' ),
+                'cancel_reply_link' => __( 'Cancel Reply' ),
+                'label_submit'      => __( 'Send' ),
+                'format'            => 'xhtml',
+                'comment_notes_before'     => '',
+                'comment_field' =>  '<p class="post__comments-section__comments__form__textarea__wrapper"><label for="comment">
+                            <textarea name="comment" id="comment" placeholder="Comment" class="post__comments-section__comments__form__text post__comments-section__comments__form__textarea"></textarea>
+                        </label></p>',
+
+                'must_log_in' => '<p class="must-log-in">' .
+                    sprintf(
+                        __( 'You must be <a href="%s">logged in</a> to post a comment.' ),
+                        wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
+                    ) . '</p>',
+
+                'logged_in_as' => '<p class="logged-in-as">' .
+                    sprintf(
+                        __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ),
+                        admin_url( 'profile.php' ),
+                        $user_identity,
+                        wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+                    ) . '</p>',
+                'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+            );
+            //            echo $comments_args->comment_field;
+            comment_form($args);
+            ?>
+        </section>
     <?php } else { ?>
         <section class="thin-container post__comments-section__wrapper">
             <h2 class="post__comments-section__headline">

@@ -16,11 +16,12 @@ gulp.task('sass', function () {
 
 gulp.task("watch", ['sass'], function () {
 	browserSync.init({
-		server: ".",
+		server: "localhost/~user/homeworks/homework-16",
 		notify: false,
 		ui: {
 			port: 3000
-		}
+		},
+        port: 8000,
     });
     gulp.watch('sass/**/*.scss', ["sass"]);
     gulp.watch('**/*.html' , ['html']);
